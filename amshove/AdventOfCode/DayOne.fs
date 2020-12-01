@@ -1,15 +1,6 @@
 ﻿module DayOne
 
-
-let cartesian firstList secondList = 
-    firstList
-    |> List.collect (fun numberOfFirst -> 
-        secondList
-        |> List.map (fun numberOfSecond -> numberOfFirst, numberOfSecond)
-    )
-
-
-let combineWithEach list = cartesian list list
+let combineWithEach list = List.allPairs list list
 
 let multiply (firstNumber, secondNumber) =
     firstNumber * secondNumber
