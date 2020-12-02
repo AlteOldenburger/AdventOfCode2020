@@ -17,10 +17,10 @@ public class PasswordPolicyChecker
             m.matches();
             var minimumNumbersOfCharacters = Integer.parseInt(m.group(1));
             var maximumNumbersOfCharacters = Integer.parseInt(m.group(2));
-            var character = m.group(3).charAt(0);
+            var characterToMatch = m.group(3).charAt(0);
             var password = m.group(4);
 
-            var occurrences = password.chars().filter(chars -> chars == character).count();
+            var occurrences = password.chars().filter(chars -> chars == characterToMatch).count();
 
             if (occurrences >= minimumNumbersOfCharacters && occurrences <= maximumNumbersOfCharacters)
             {
