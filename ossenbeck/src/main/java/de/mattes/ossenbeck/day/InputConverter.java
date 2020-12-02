@@ -1,6 +1,5 @@
 package de.mattes.ossenbeck.day;
 
-import java.math.BigInteger;
 import java.util.List;
 import java.util.stream.Collectors;
 
