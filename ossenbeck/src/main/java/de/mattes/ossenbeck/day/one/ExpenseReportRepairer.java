@@ -1,10 +1,11 @@
 package de.mattes.ossenbeck.day.one;
 
 import de.mattes.ossenbeck.day.InputConverter;
+import de.mattes.ossenbeck.day.PuzzleSolver;
 
-import java.util.*;
+import java.util.List;
 
-public class ExpenseReportRepairer {
+public class ExpenseReportRepairer implements PuzzleSolver {
     private static final int NO_RESULT = -1;
     private final int desiredSum;
     private final List<Integer> expenseReport;
@@ -14,11 +15,13 @@ public class ExpenseReportRepairer {
         this.expenseReport = InputConverter.convertToInt(expenseReport);
     }
 
-    public int solvePartOne() {
+    @Override
+    public Integer solvePartOne() {
         return multiplyEntriesForDesiredSum(desiredSum);
     }
 
-    public int solvePartTwo() {
+    @Override
+    public Integer solvePartTwo() {
         return expenseReport.stream()
                             .filter(entry -> multiplyEntriesForDesiredSum(desiredSum - entry) != NO_RESULT)
                             .reduce(Math::multiplyExact)
