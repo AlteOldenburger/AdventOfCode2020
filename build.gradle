@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'de.justinharder.aoc'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:5.7.0",
+            "org.junit.jupiter:junit-jupiter-api:5.7.0",
+            "org.junit.jupiter:junit-jupiter-params:5.7.0",
+            "org.assertj:assertj-core:3.14.0",
+            "org.mockito:mockito-core:2.7.19"
+
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.5.2"
+}
+
+version = '0.0.1'
