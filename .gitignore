@@ -12,6 +12,8 @@
 
 # IntelliJ
 .idea/*
+.gradle/*
+AdventOfCode2020.iml
 
 # Package Files #
 *.jar
