@@ -20,14 +20,9 @@ public class Validation
 
 	private static boolean validate(Password password)
 	{
-		var occurrences = 0;
-		for (int i = 0; i < password.getValue().length(); i++)
-		{
-			if (password.getValue().charAt(i) == password.getPolicy().getLiteral())
-			{
-				occurrences++;
-			}
-		}
+		var occurrences = password.getValue().chars()
+			.filter(literal -> literal == password.getPolicy().getLiteral())
+			.count();
 
 		return occurrences >= password.getPolicy().getMinimum() && occurrences <= password.getPolicy().getMaximum();
 	}
