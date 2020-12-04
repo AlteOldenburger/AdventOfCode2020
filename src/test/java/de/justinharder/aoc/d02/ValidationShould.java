@@ -19,7 +19,7 @@ class ValidationShould
 			new Password(new Policy(2, 9, 'c'), "ccccccccc"));
 
 		assertThat(Validation.filter(passwords)).containsExactly(
-			ValidPassword.of(new Password(new Policy(1, 3, 'a'), "abcde")),
-			ValidPassword.of(new Password(new Policy(2, 9, 'c'), "ccccccccc")));
+			new Password(new Policy(1, 3, 'a'), "abcde"),
+			new Password(new Policy(2, 9, 'c'), "ccccccccc"));
 	}
 }

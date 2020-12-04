@@ -9,8 +9,8 @@ public class Main
 {
 	public static void main(String[] args)
 	{
-		var inputD02 = Input.of(Path.of("src/main/resources/d02.txt"), StandardCharsets.UTF_8);
-		var validPasswords = Validation.filter(PasswordStream.of(inputD02));
-		System.out.println("Number of valid passwords: " + validPasswords.size()); // Result = 655
+		var input = Input.of(Path.of("src/main/resources/d02.txt"), StandardCharsets.UTF_8);
+		var passwords = Validation.filter(PasswordStream.of(input));
+		System.out.println("Number of passwords: " + passwords.size()); // Result = 655
 	}
 }

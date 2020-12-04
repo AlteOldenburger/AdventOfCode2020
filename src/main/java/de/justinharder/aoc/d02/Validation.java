@@ -10,11 +10,10 @@ import java.util.stream.Stream;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Validation
 {
-	public static List<ValidPassword> filter(Stream<Password> passwords)
+	public static List<Password> filter(Stream<Password> passwords)
 	{
 		return passwords
 			.filter(Validation::validate)
-			.map(ValidPassword::of)
 			.collect(Collectors.toList());
 	}
 
