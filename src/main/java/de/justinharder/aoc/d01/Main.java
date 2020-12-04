@@ -1,7 +1,6 @@
 package de.justinharder.aoc.d01;
 
 import de.justinharder.aoc.base.Input;
-import lombok.extern.java.Log;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
