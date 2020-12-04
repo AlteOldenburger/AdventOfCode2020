@@ -6,7 +6,6 @@ import lombok.extern.java.Log;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 
-@Log
 public class Main
 {
 	public static void main(String[] args)
