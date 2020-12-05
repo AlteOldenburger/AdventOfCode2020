@@ -21,10 +21,22 @@ public class PasswordPolicyChecker
             var password = m.group(4);
 
             var occurrences = password.chars().filter(chars -> chars == characterToMatch).count();
+            var a = password.charAt(minimumNumbersOfCharacters - 1);
+            var b = password.charAt(maximumNumbersOfCharacters - 1);
 
-            if (occurrences >= minimumNumbersOfCharacters && occurrences <= maximumNumbersOfCharacters)
+            if (characterToMatch == a)
             {
-                validPasswords++;
+                if (characterToMatch != b)
+                {
+                    validPasswords++;
+                }
+            }
+            if (characterToMatch == b)
+            {
+                if (characterToMatch != 1)
+                {
+                    validPasswords++;
+                }
             }
         }
         return validPasswords;
