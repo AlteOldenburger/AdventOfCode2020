@@ -1,17 +1,34 @@
 package de.justinharder.aoc.d02;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 import java.util.Objects;
 
-@Getter
-@AllArgsConstructor
 public class Policy
 {
 	private final int minimum;
 	private final int maximum;
 	private final char literal;
+
+	public Policy(int minimum, int maximum, char literal)
+	{
+		this.minimum = minimum;
+		this.maximum = maximum;
+		this.literal = literal;
+	}
+
+	public int getMinimum()
+	{
+		return minimum;
+	}
+
+	public int getMaximum()
+	{
+		return maximum;
+	}
+
+	public char getLiteral()
+	{
+		return literal;
+	}
 
 	@Override
 	public boolean equals(Object o)

@@ -1,11 +1,9 @@
 package de.justinharder.aoc.d01;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Product
 {
+	private Product() {}
+
 	public static int of(int number1, int number2)
 	{
 		return number1 * number2;

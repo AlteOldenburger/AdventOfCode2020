@@ -1,15 +1,13 @@
 package de.justinharder.aoc.d02;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Validation
 {
+	private Validation() {}
+
 	public static List<Password> filter(Stream<Password> passwords)
 	{
 		return passwords

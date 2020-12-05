@@ -1,15 +1,14 @@
 package de.justinharder.aoc.d01;
 
-import lombok.NoArgsConstructor;
-
 import java.util.List;
 
-@NoArgsConstructor
 public class TwentyTwenty
 {
 	private int number1;
 	private int number2;
 	private int number3;
+
+	public TwentyTwenty() {}
 
 	public int ofTwo(List<String> input)
 	{
