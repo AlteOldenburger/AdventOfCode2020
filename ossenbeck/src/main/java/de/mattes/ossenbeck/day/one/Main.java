@@ -5,7 +5,7 @@ import de.mattes.ossenbeck.day.InputReader;
 
 public class Main {
     public static void main(String[] args) {
-        var input = InputReader.readInput("dayOne.txt");
+        var input = InputReader.read("dayOne.txt");
 
         Executor.execute(new ExpenseReportRepairer(2020, input));
     }

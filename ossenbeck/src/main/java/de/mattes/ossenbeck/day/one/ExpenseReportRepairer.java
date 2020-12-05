@@ -7,6 +7,7 @@ import java.util.List;
 
 public class ExpenseReportRepairer implements PuzzleSolver {
     private static final int NO_RESULT = -1;
+
     private final int desiredSum;
     private final List<Integer> expenseReport;
 
@@ -16,12 +17,12 @@ public class ExpenseReportRepairer implements PuzzleSolver {
     }
 
     @Override
-    public Integer solvePartOne() {
+    public Number solvePartOne() {
         return multiplyEntriesForDesiredSum(desiredSum);
     }
 
     @Override
-    public Integer solvePartTwo() {
+    public Number solvePartTwo() {
         return expenseReport.stream()
                             .filter(entry -> multiplyEntriesForDesiredSum(desiredSum - entry) != NO_RESULT)
                             .reduce(Math::multiplyExact)

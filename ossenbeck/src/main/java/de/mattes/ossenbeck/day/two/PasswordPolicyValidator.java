@@ -13,14 +13,14 @@ public class PasswordPolicyValidator implements PuzzleSolver {
     }
 
     @Override
-    public Long solvePartOne() {
+    public Number solvePartOne() {
         return passwords.stream()
                         .filter(this::compliesOldPolicies)
                         .count();
     }
 
     @Override
-    public Long solvePartTwo() {
+    public Number solvePartTwo() {
         return passwords.stream()
                         .filter(this::compliesNewPolicies)
                         .count();

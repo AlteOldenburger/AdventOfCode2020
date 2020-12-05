@@ -5,7 +5,7 @@ import de.mattes.ossenbeck.day.InputReader;
 
 public class Main {
     public static void main(String[] args) {
-        var input = InputReader.readInput("dayTwo.txt");
+        var input = InputReader.read("dayTwo.txt");
 
         Executor.execute(new PasswordPolicyValidator(input));
     }

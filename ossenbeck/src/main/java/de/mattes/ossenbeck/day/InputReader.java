@@ -8,7 +8,7 @@ public class InputReader {
 
     private InputReader() {}
 
-    public static List<String> readInput(String filename) {
+    public static List<String> read(String filename) {
         try {
             return Files.readAllLines(Paths.get(InputReader.class.getResource("/" + filename).toURI()));
         } catch (final Exception e) {
