@@ -14,14 +14,14 @@ class PasswordShould
 	@DisplayName("eine Wrapper-Klasse sein")
 	void test01()
 	{
-		var policy = new Policy(1, 3, 'a');
+		var policy = new PolicyOne('a', 1, 3);
 		var password = new Password(policy, "aaabcd");
 
 		assertAll(
 			() -> assertThat(password.getPolicy()).isEqualTo(policy),
 			() -> assertThat(password.getValue()).isEqualTo("aaabcd"),
 			() -> assertThat(password)
-				.hasToString("Password{policy=Policy{minimum=1, maximum=3, literal=a}, value=aaabcd}"));
+				.hasToString("Password{policy=PolicyOne{literal=a, minimum=1, maximum=3}, value=aaabcd}"));
 	}
 
 	@Test

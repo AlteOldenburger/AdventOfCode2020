@@ -1,6 +1,7 @@
 package de.justinharder.aoc.d02;
 
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -8,19 +9,29 @@ public class Validation
 {
 	private Validation() {}
 
-	public static List<Password> filter(Stream<Password> passwords)
+	public static List<Password> filter(Stream<Password> passwords, Predicate<Password> validate)
 	{
 		return passwords
-			.filter(Validation::validate)
+			.filter(validate)
 			.collect(Collectors.toList());
 	}
 
-	private static boolean validate(Password password)
+	public static boolean validateOne(Password password)
 	{
 		var occurrences = password.getValue().chars()
 			.filter(literal -> literal == password.getPolicy().getLiteral())
 			.count();
 
-		return occurrences >= password.getPolicy().getMinimum() && occurrences <= password.getPolicy().getMaximum();
+		return occurrences >= ((PolicyOne) password.getPolicy()).getMinimum() &&
+			occurrences <= ((PolicyOne) password.getPolicy()).getMaximum();
+	}
+
+	public static boolean validateTwo(Password password)
+	{
+		var policy = (PolicyTwo) password.getPolicy();
+		var literal = policy.getLiteral();
+		var value = password.getValue();
+
+		return value.charAt(policy.getFirstPosition()) == literal ^ value.charAt(policy.getSecondPosition()) == literal;
 	}
 }
