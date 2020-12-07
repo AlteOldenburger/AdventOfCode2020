@@ -15,19 +15,19 @@ public class Area
 
 	public static Area of(List<String> input)
 	{
-		var fullMap = input.stream()
+		var map = input.stream()
 			.map(line -> line.repeat(1000))
 			.collect(Collectors.toList());
 
-		var array = new Geology[fullMap.size()][fullMap.get(0).length()];
-		for (int i = 0; i < fullMap.size(); i++)
+		var array = new Geology[map.size()][map.get(0).length()];
+		for (int row = 0; row < map.size(); row++)
 		{
-			var geologyLine = fullMap.get(i).chars()
+			var line = map.get(row).chars()
 				.mapToObj(character -> Geology.of((char) character))
 				.collect(Collectors.toList());
-			for (int j = 0; j < geologyLine.size(); j++)
+			for (int column = 0; column < line.size(); column++)
 			{
-				array[i][j] = geologyLine.get(j);
+				array[row][column] = line.get(column);
 			}
 		}
 
