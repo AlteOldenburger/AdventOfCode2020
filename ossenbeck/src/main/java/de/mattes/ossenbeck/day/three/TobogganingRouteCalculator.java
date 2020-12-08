@@ -1,12 +1,13 @@
 package de.mattes.ossenbeck.day.three;
 
 import de.mattes.ossenbeck.day.PuzzleSolver;
+import de.mattes.ossenbeck.day.Util;
 
 import java.util.List;
 import java.util.stream.IntStream;
 
 public class TobogganingRouteCalculator implements PuzzleSolver {
-    private static final long NO_RESULT = -1;
+    private static final long NO_RESULT = Util.NO_RESULT;
 
     private final Forest forest;
 

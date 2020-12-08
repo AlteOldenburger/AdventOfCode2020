@@ -5,9 +5,9 @@ import de.mattes.ossenbeck.day.PuzzleSolver;
 
 import java.util.List;
 
-public class ExpenseReportRepairer implements PuzzleSolver {
-    private static final int NO_RESULT = -1;
+import static de.mattes.ossenbeck.day.Util.NO_RESULT;
 
+public class ExpenseReportRepairer implements PuzzleSolver {
     private final int desiredSum;
     private final List<Integer> expenseReport;
 
