@@ -25,8 +25,9 @@ public class SeatDecoder implements PuzzleSolver {
     @Override
     public Number solvePartTwo() {
         var seatIds = createListOfSeatIds();
+        var firstSeatId = seatIds.get(0);
 
-        return IntStream.range(seatIds.get(0), seatIds.size())
+        return IntStream.range(firstSeatId, seatIds.size() + firstSeatId)
                         .filter(i -> !seatIds.contains(i))
                         .findFirst()
                         .orElse(NO_RESULT);
