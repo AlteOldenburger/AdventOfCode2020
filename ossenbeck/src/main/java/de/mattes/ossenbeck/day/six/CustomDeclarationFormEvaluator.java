@@ -27,7 +27,7 @@ public class CustomDeclarationFormEvaluator implements PuzzleSolver {
         return identifyGroupAnswers(Util::intersect);
     }
 
-    public int identifyGroupAnswers(Function<? super List<String>, ? extends Set<String>> setOperation) {
+    public int identifyGroupAnswers(Function<List<String>, Set<String>> setOperation) {
         return Arrays.stream(String.join(";", groupAnswers).split(";;"))
                      .map(s -> Arrays.asList(s.split(";")))
                      .map(setOperation)

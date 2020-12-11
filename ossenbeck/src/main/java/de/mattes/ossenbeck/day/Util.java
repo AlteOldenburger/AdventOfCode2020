@@ -29,16 +29,16 @@ public class Util {
         return false;
     }
 
-    public static Set<String> union(List<String> arr) {
-        return arr.stream()
+    public static Set<String> union(List<String> list) {
+        return list.stream()
                   .flatMap(s -> Arrays.stream(s.split("")))
                   .collect(Collectors.toSet());
     }
 
-    public static Set<String> intersect(List<String> arr) {
-        var set = new HashSet<>(List.of(arr.get(0).split("")));
+    public static Set<String> intersect(List<String> list) {
+        var set = new HashSet<>(List.of(list.get(0).split("")));
 
-        arr.stream()
+        list.stream()
            .skip(1)
            .map(s -> List.of(s.split("")))
            .map(HashSet::new)
