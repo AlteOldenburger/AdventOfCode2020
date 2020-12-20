@@ -2,7 +2,6 @@ package de.justinharder.aoc.d02;
 
 import de.justinharder.aoc.base.Input;
 
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 
 public class Main
