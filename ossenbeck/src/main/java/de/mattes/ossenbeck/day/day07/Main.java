@@ -5,7 +5,7 @@ import de.mattes.ossenbeck.day.InputReader;
 
 public class Main {
     public static void main(String[] args) {
-        var input = InputReader.read("daySeven.txt");
+        var input = InputReader.read("day07.txt");
 
         Executor.execute(new LuggageProcessor(input));
     }
